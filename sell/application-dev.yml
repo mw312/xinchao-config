@@ -1,7 +1,7 @@
-# 加解密根密码
-jasypt:
-  encryptor:
-    password: pig #根密码
+## 加解密根密码
+#jasypt:
+#  encryptor:
+#    password: pig #根密码
 
 # Spring 相关
 spring:
@@ -78,8 +78,8 @@ mybatis-plus:
     map-underscore-to-camel-case: true
 
 # spring security 配置
-security:
-  oauth2:
-    resource:
-      loadBalanced: true
-      token-info-uri: http://sell-auth/oauth/check_token
+#security:
+#  oauth2:
+#    resource:
+#      loadBalanced: true
+#      token-info-uri: http://sell-auth/oauth/check_token
