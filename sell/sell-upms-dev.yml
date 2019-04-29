@@ -22,4 +22,4 @@ ignore:
     - /log/**
 
 test:
-  config: sell-upms-config
+  config: sell-upms-config1
