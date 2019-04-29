@@ -26,7 +26,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: '*'
+        include: bus-refresh
 
 # feign 配置
 feign:
@@ -60,7 +60,7 @@ hystrix:
 
 #请求处理的超时时间
 ribbon:
-  ReadTimeout: 10000
+  ReadTimeout: 12000
   ConnectTimeout: 10000
 
 # mybaits-plus配置
