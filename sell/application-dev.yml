@@ -26,7 +26,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: '*'
+        include: bus-refresh
 
 # feign 配置
 feign:
