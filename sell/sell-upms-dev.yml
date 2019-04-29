@@ -20,3 +20,6 @@ ignore:
     - /actuator/**
     - /user/info/*
     - /log/**
+
+test:
+  config: sell-upms-config
