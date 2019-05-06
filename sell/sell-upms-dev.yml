@@ -1,3 +1,11 @@
+## spring security 配置
+security:
+  oauth2:
+    client:
+      client-id: ENC(peObn1lp+ATzPp67NvPjoQ==)
+      client-secret: ENC(n3RmrUJvs6+jx27NTy4hbw==)
+      scope: server
+
 # 数据源
 spring:
   datasource:
