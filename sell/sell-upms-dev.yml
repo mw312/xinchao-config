@@ -1,8 +1,9 @@
+## spring security 配置
 security:
   oauth2:
     client:
-      client-id: ENC(imENTO7M8bLO38LFSIxnzw==)
-      client-secret: ENC(i3cDFhs26sa2Ucrfz2hnQw==)
+      client-id: ENC(JvlvkFLyMkOt5Z9fBAtxYw==)
+      client-secret: ENC(W6ADVUxAvC5GanBqZnCkIA==)
       scope: server
 
 # 数据源
