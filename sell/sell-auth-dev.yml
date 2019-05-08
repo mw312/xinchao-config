@@ -4,5 +4,5 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: mysql
+    password: ENC(IDmyJ4IXb7MptwbLev6ULA==) # mysql
     url: jdbc:mysql://sell-mysql:3306/sell?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
