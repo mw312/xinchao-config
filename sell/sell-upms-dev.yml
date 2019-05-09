@@ -16,11 +16,11 @@ spring:
     url: jdbc:mysql://sell-mysql:3306/sell?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
 
 # 直接放行URL
-#ignore:
-#  urls:
-#    - /actuator/**
-#    - /user/info/*
-#    - /log/**
+ignore:
+  urls:
+    - /actuator/**
+    - /user/info/*
+    - /log/**
 
 test:
   config: sell-upms-config
