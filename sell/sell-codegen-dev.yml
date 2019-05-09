@@ -17,7 +17,7 @@ spring:
   resources:
     static-locations: classpath:/static/,classpath:/views/
 
-# 直接放行URL
-ignore:
-  urls:
-    - /actuator/**
+## 直接放行URL
+#ignore:
+#  urls:
+#    - /actuator/**
