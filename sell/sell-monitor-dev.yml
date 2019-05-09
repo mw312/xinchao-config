@@ -2,5 +2,5 @@ spring:
   # 安全配置
   security:
     user:
-      name: ENC(8Hk2ILNJM8UTOuW/Xi75qg==)
-      password: ENC(o6cuPFfUevmTbkmBnE67Ow====)
+      name: ENC(B6qF+iYHpCGnZakGCRw9uw==)
+      password: ENC(boNXOpKBcbX4MHmB3zjQxw==)
