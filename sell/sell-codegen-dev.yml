@@ -6,8 +6,8 @@ security:
       client-secret: ENC(AhqEIMhE3g8a/oViW3+RoA==)
       scope: server
 
-# 数据源
 spring:
+  # 数据源
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -17,7 +17,7 @@ spring:
   resources:
     static-locations: classpath:/static/,classpath:/views/
 
-## 直接放行URL
-#ignore:
-#  urls:
-#    - /actuator/**
+# 直接放行URL
+ignore:
+  urls:
+    - /actuator/**
