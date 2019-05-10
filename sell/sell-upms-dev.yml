@@ -19,7 +19,7 @@ spring:
 ignore:
   urls:
     - /actuator/**
-    - /user/info/*
+    #- /user/info/*
     - /log/**
 
 test:
