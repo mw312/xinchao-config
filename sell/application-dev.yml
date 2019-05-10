@@ -38,8 +38,8 @@ feign:
   client:
     config:
       default:
-        connectTimeout: 2000
-        readTimeout: 6000
+        connectTimeout: 10000
+        readTimeout: 10000
   compression:
     request:
       enabled: true
@@ -61,6 +61,10 @@ hystrix:
 ribbon:
   ReadTimeout: 10000
   ConnectTimeout: 10000
+  # 默认情况下,GET方式请求无论是连接异常还是读取异常,都会进行重试; 非GET方式请求,只有连接异常时,才会进行重试.
+  # 最好不要启用ribbon的重试操作,即OkToRetryOnAllOperations不要配置true,如果设置为true，则需要考虑幂等性问题
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 0
 
 # mybaits-plus配置
 mybatis-plus:
