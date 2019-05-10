@@ -17,9 +17,8 @@ spring:
       client:
         enabled: true
     sampler:
-      # 默认的采样比率为0.1，不能看到所有请求数据
-      # 更改采样比率为1，就能看到所有的请求数据了，但是这样会增加接口调用延迟
-      probability: 1.0
+      # 默认的采样比率为0.1，不能看到所有请求数据。如果更改采样比率为1，就能看到所有的请求数据了，但是这样会增加接口调用延迟
+      probability: 0.1
 
 # 暴露监控端点
 management:
@@ -55,7 +54,7 @@ hystrix:
         isolation:
           strategy: SEMAPHORE
           thread:
-            timeoutInMilliseconds: 60000
+            timeoutInMilliseconds: 10000
   shareSecurityContext: true
 
 #请求处理的超时时间
