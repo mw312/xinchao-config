@@ -20,7 +20,7 @@ ignore:
   urls:
     - /actuator/**
     #- /user/info/*
-    - /log/**
+    #- - /log/**
 
 test:
   config: sell-upms-config
