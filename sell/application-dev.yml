@@ -38,8 +38,8 @@ feign:
   client:
     config:
       default:
-        connectTimeout: 10000
-        readTimeout: 10000
+        connectTimeout: 20000
+        readTimeout: 60000
   compression:
     request:
       enabled: true
@@ -54,7 +54,7 @@ hystrix:
         isolation:
           strategy: SEMAPHORE
           thread:
-            timeoutInMilliseconds: 10000
+            timeoutInMilliseconds: 60000
   shareSecurityContext: true
 
 #请求处理的超时时间
