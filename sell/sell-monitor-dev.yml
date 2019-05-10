@@ -2,5 +2,5 @@ spring:
   # 安全配置
   security:
     user:
-      name: ENC(B6qF+iYHpCGnZakGCRw9uw==)
-      password: ENC(boNXOpKBcbX4MHmB3zjQxw==)
+      name: ENC(B6qF+iYHpCGnZakGCRw9uw==) # monitor
+      password: ENC(boNXOpKBcbX4MHmB3zjQxw==) # monitor

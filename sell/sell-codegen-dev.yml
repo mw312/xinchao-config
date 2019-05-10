@@ -2,8 +2,8 @@
 security:
   oauth2:
     client:
-      client-id: ENC(A43tEzFy1b8ZPqSuGFvu8A==)
-      client-secret: ENC(AhqEIMhE3g8a/oViW3+RoA==)
+      client-id: ENC(A43tEzFy1b8ZPqSuGFvu8A==)  # codegen
+      client-secret: ENC(AhqEIMhE3g8a/oViW3+RoA==)  # codegen
       scope: server
 
 spring:

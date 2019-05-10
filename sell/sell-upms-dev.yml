@@ -2,8 +2,8 @@
 security:
   oauth2:
     client:
-      client-id: ENC(twuhCbvnzZwCREcO6fCgRQ==)
-      client-secret: ENC(dYoyZAivLbX5O18a47d8uw==)
+      client-id: ENC(twuhCbvnzZwCREcO6fCgRQ==) # upms
+      client-secret: ENC(dYoyZAivLbX5O18a47d8uw==)  # upms
       scope: server
 
 spring:
