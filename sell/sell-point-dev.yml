@@ -19,6 +19,8 @@ spring:
 ignore:
   urls:
     - /actuator/**
+    # 登陆时认证服务器调用upms接口获取用户信息直接放行URL
+    - /user/info/*
     # @Syslog注解直接放行URL
     - /log/**
     # swagger2直接放行URL
