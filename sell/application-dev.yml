@@ -38,8 +38,8 @@ feign:
   client:
     config:
       default:
-        connectTimeout: 5000
-        readTimeout: 10000
+        connectTimeout: 3000
+        readTimeout: 8000
   compression:
     request:
       enabled: true
@@ -65,13 +65,13 @@ hystrix:
         isolation:
           strategy: SEMAPHORE
           thread:
-            timeoutInMilliseconds: 30000 # 断路器超时时间，默认1000ms
+            timeoutInMilliseconds: 20000 # 断路器超时时间，默认1000ms
   shareSecurityContext: true
 
 # ribbon负载均衡请求超时设置
 ribbon:
-  ConnectTimeout: 5000 # ribbon请求连接的超时时间，默认值2000
-  ReadTimeout: 10000 # 负载均衡超时时间，默认值5000
+  ConnectTimeout: 3000 # ribbon请求连接的超时时间，默认值2000
+  ReadTimeout: 8000 # 负载均衡超时时间，默认值5000
   # 默认情况下,GET方式请求无论是连接异常还是读取异常,都会进行重试; 非GET方式请求,只有连接异常时,才会进行重试.
   # 最好不要启用ribbon的重试操作,即OkToRetryOnAllOperations[对所有操作请求都进行重试,默认false]不要配置true,如果设置为true，所有请求都会重试，则需要考虑幂等性问题
   # 实际请求次数为：MaxAutoRetries +  MaxAutoRetriesNextServer + (MaxAutoRetries * MaxAutoRetriesNextServer  )
