@@ -30,7 +30,4 @@ ignore:
     - /webjars/springfox-swagger-ui/**
 
 swagger:
-  enable: true
-
-test:
-  config: sell-upms-config
+  enable: false
