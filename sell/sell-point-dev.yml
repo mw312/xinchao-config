@@ -11,9 +11,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: sell
-    password: mFPO#XwoWqP7B6zv # mFPO#XwoWqP7B6zv
-    url: jdbc:mysql://192.168.82.225:3306/sell
+    username: root
+    password: ENC(IDmyJ4IXb7MptwbLev6ULA==) # mysql
+    url: jdbc:mysql://sell-mysql:3306/sell?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
 
 # 直接放行URL
 ignore:
