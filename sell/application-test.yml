@@ -1,0 +1,100 @@
+## 加解密所需的salt
+jasypt:
+  encryptor:
+    password: XC
+
+# Spring 相关
+spring:
+  redis:
+    password:
+    host: sell-redis
+  # zipkin
+  zipkin:
+    enabled: true
+    base-url: http://sell-zipkin
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      # 默认的采样比率为0.1，不能看到所有请求数据。如果更改采样比率为1，就能看到所有的请求数据了，但是这样会增加接口调用延迟
+      probability: 0.1
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+# feign 配置
+feign:
+  hystrix:
+    enabled: true
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+  client:
+    config:
+      default:
+        connectTimeout: 3000
+        readTimeout: 8000
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+
+# hystrix与ribbon超时配置说明：
+#如果hystrix.command.default.execution.timeout.enabled为true,则会有两个执行方法超时的配置,一个就是ribbon的ReadTimeout,一个就是熔断器hystrix的timeoutInMilliseconds, 此时谁的值小谁生效
+#如果hystrix.command.default.execution.timeout.enabled为false,则熔断器不进行超时熔断,而是根据ribbon的ReadTimeout抛出的异常而熔断,也就是取决于ribbon
+#ribbon的ConnectTimeout,配置的是请求服务的超时时间,除非服务找不到,或者网络原因,这个时间才会生效
+#ribbon还有MaxAutoRetries对当前实例的重试次数,MaxAutoRetriesNextServer对切换实例的重试次数, 如果ribbon的ReadTimeout超时,或者ConnectTimeout连接超时,会进行重试操作
+#通常hystrix的timeoutInMilliseconds超时时间需要配置的比ribbon的ReadTimeout长,ReadTimeout比ConnectTimeout长。因为一旦熔断次数多了就会服务降级。
+
+# hystrix 配置
+hystrix:
+  command:
+    # default指定全局有效，service id指定应用有效
+    default:
+      execution:
+        timeout:
+          # 如果enabled设置为false,则请求超时交给ribbon控制; 为true,则超时作为熔断根据[默认值：true]
+          enabled: true
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 20000 # 断路器超时时间，默认1000ms
+  shareSecurityContext: true
+
+# ribbon负载均衡请求超时设置
+ribbon:
+  ConnectTimeout: 3000 # ribbon请求连接的超时时间，默认值2000
+  ReadTimeout: 8000 # 负载均衡超时时间，默认值5000
+  # 默认情况下,GET方式请求无论是连接异常还是读取异常,都会进行重试; 非GET方式请求,只有连接异常时,才会进行重试.
+  # 最好不要启用ribbon的重试操作,即OkToRetryOnAllOperations[对所有操作请求都进行重试,默认false]不要配置true,如果设置为true，所有请求都会重试，则需要考虑幂等性问题
+  # 实际请求次数为：MaxAutoRetries +  MaxAutoRetriesNextServer + (MaxAutoRetries * MaxAutoRetriesNextServer  )
+  MaxAutoRetries: 0 # 对当前实例的重试次数，默认0
+  MaxAutoRetriesNextServer: 0 # 对切换实例的重试次数，默认值是1
+
+# mybaits-plus配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    banner: false
+    db-config:
+      id-type: 0
+      field-strategy: 1
+      table-underline: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+
+# spring security 配置
+security:
+  oauth2:
+    resource:
+      loadBalanced: true
+      token-info-uri: http://sell-auth/oauth/check_token
