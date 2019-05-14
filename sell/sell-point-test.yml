@@ -1,0 +1,33 @@
+## spring security 配置
+security:
+  oauth2:
+    client:
+      client-id: ENC(nXdYUyceMqy1nHuwUhgcaw==) # point
+      client-secret: ENC(TSmQ0ROuma+FBukxEU8+LQ==)  # point
+      scope: server
+
+spring:
+  # 数据源
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ENC(IDmyJ4IXb7MptwbLev6ULA==) # mysql
+    url: jdbc:mysql://sell-mysql:3306/sell?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+
+# 直接放行URL
+ignore:
+  urls:
+    - /actuator/**
+    # 登陆时认证服务器调用upms接口获取用户信息直接放行URL
+    - /user/info/*
+    # @Syslog注解直接放行URL
+    - /log/**
+    # swagger2直接放行URL
+    - /swagger-ui.html
+    - /swagger-resources/**
+    - /v2/api-docs
+    - /webjars/springfox-swagger-ui/**
+
+swagger:
+  enable: true
